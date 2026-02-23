@@ -3,7 +3,7 @@ import app from './app.js'
 import connectDB from './config/db.js'
 import logger from './utils/logger.js'
 
-// Load environment variables
+// Load environment variables (Port conflict resolved)
 dotenv.config()
 
 // Connect to database

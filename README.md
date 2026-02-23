@@ -1,213 +1,89 @@
-# Amazon Clone - E-Commerce Web Application
+# Amazon Clone 2026 - Full Stack E-Commerce
 
-A modern, fully functional Amazon-style e-commerce application built with React.js, Redux Toolkit, and Tailwind CSS. This project demonstrates industry best practices for building scalable web applications.
+A modern, full-stack Amazon-style e-commerce application built with the MERN stack (MongoDB, Express, React, Node.js).
 
-## 🚀 Features
+## 🚀 Project Overview
 
-- ✅ **Product Browsing** - Browse products across multiple categories
-- ✅ **Search & Filter** - Real-time search and category filtering
-- ✅ **Shopping Cart** - Add, remove, and update cart items with localStorage persistence
-- ✅ **User Authentication** - Login and signup functionality
-- ✅ **Protected Routes** - Secure cart, checkout, and order pages
-- ✅ **Checkout Flow** - Complete order placement with form validation
-- ✅ **Order History** - View past orders
-- ✅ **Responsive Design** - Works on mobile, tablet, and desktop
-- ✅ **State Management** - Redux Toolkit for global state
-- ✅ **Code Splitting** - Lazy loading for optimal performance
+This project consists of two main parts:
+- **Frontend**: A React application built with Vite, Redux Toolkit, and Tailwind CSS.
+- **Backend**: A Node.js/Express API with MongoDB integration, JWT authentication, and Stripe payment processing.
+
+## 📁 Project Structure
+
+```
+Amazon-Clone/
+├── frontend/          # React + Vite frontend
+├── backend/           # Node.js + Express backend
+├── vercel.json        # Vercel deployment configuration
+└── README.md          # Project documentation
+```
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **React 18+** - Modern React with Hooks
-- **Redux Toolkit** - State management
-- **React Router v6** - Client-side routing
-- **Tailwind CSS** - Utility-first CSS framework
-- **Vite** - Fast build tool
-- **Axios** - HTTP client
-- **React Icons** - Icon library
+- **React 18** (Vite)
+- **Redux Toolkit** (State Management)
+- **Tailwind CSS** (Styling)
+- **React Router 6** (Routing)
+- **Axios** (API Client)
 
-### Development Tools
-- **ESLint** - Code linting
-- **Prettier** - Code formatting
-- **Jest** - Testing framework
-- **React Testing Library** - Component testing
+### Backend
+- **Node.js & Express**
+- **MongoDB & Mongoose** (Database)
+- **JWT** (Authentication)
+- **Stripe** (Payment Processing)
+- **Winston & Morgan** (Logging)
 
-## 📦 Installation
+## ⚡ Quick Start
 
-1. **Clone the repository**
-   ```bash
-   cd d:/Clone/Amazon
-   ```
+### 1. Prerequisites
+- Node.js (v16+)
+- MongoDB (Local or Atlas)
+- Stripe Account (for payments)
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open your browser**
-   Navigate to `http://localhost:3000`
-
-## 🎯 Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run format` - Format code with Prettier
-- `npm test` - Run tests
-- `npm run test:coverage` - Run tests with coverage
-
-## 📂 Project Structure
-
-```
-src/
-├── components/       # Reusable UI components
-│   ├── ui/          # Base UI components (Button, Input, etc.)
-│   ├── layout/      # Layout components (Header, Footer)
-│   ├── product/     # Product-related components
-│   └── ProtectedRoute.jsx
-├── pages/           # Page components
-│   ├── Home.jsx
-│   ├── ProductList.jsx
-│   ├── ProductDetailPage.jsx
-│   ├── Cart.jsx
-│   ├── Checkout.jsx
-│   ├── Orders.jsx
-│   ├── Login.jsx
-│   ├── Signup.jsx
-│   └── NotFound.jsx
-├── redux/           # Redux store and slices
-│   ├── store.js
-│   └── slices/
-│       ├── productsSlice.js
-│       ├── cartSlice.js
-│       ├── authSlice.js
-│       └── ordersSlice.js
-├── services/        # API services
-│   ├── api.js
-│   ├── productService.js
-│   ├── authService.js
-│   └── orderService.js
-├── hooks/           # Custom React hooks
-│   ├── useDebounce.js
-│   ├── useAuth.js
-│   └── useCart.js
-├── utils/           # Utility functions
-│   ├── helpers.js
-│   └── validation.js
-├── data/            # Mock data
-│   └── products.json
-├── App.jsx          # Root component
-├── main.jsx         # Entry point
-└── index.css        # Global styles
-```
-
-## 🎨 Design Features
-
-### Amazon-Inspired Theme
-- Custom color palette with Amazon orange (#FF9900) and blue (#146EB4)
-- Dark navigation header (#131921)
-- Clean card-based layouts
-- Smooth hover effects and transitions
-
-### Responsive Design
-- Mobile-first approach
-- Breakpoints: 640px, 768px, 1024px, 1280px
-- Collapsible mobile menu
-- Adaptive grid layouts
-
-### Performance Optimizations
-- Lazy loading for routes
-- Code splitting
-- Optimized images
-- Skeleton loaders for loading states
-
-## 🔐 Authentication
-
-### Demo Credentials
-- **Email:** john@example.com
-- **Password:** password123
-
-### Mock Backend
-This project uses a mock backend with localStorage for data persistence. In a production environment, you would integrate with a real API.
-
-## 🛒 Key Functionalities
-
-### Shopping Cart
-- Add products from product cards or detail pages
-- Update quantities directly in cart
-- Remove items
-- Persistent cart (survives page refresh)
-- Real-time price calculations
-
-### Checkout Process
-1. Review cart items
-2. Enter shipping information
-3. Enter payment details (mock)
-4. Place order
-5. View order confirmation
-
-### Order Management
-- View order history
-- Track order status
-- View shipping details
-- See estimated delivery dates
-
-## 🧪 Testing
-
-Run the test suite:
+### 2. Frontend Setup
 ```bash
-npm test
+cd frontend
+npm install
+# Create .env and set VITE_API_URL
+npm run dev
 ```
 
-Generate coverage report:
+### 3. Backend Setup
 ```bash
-npm run test:coverage
+cd backend
+npm install
+# Create .env and set MONGO_URI, JWT_SECRET, etc.
+npm run seed  # To populate initial product data
+npm run dev
 ```
 
 ## 🌐 Deployment
 
-### Build for Production
-```bash
-npm run build
-```
+### Deploying to Vercel
+1. Push your code to GitHub.
+2. Connect your repository to Vercel.
+3. Vercel will detect the project structure. You may need to configure individual projects for the frontend and backend or use the provided `vercel.json`.
 
-### Deploy to Vercel
-```bash
-npm install -g vercel
-vercel --prod
-```
+**Environment Variables Checklist:**
+- **Frontend**: `VITE_API_URL`
+- **Backend**: `MONGO_URI`, `JWT_SECRET`, `STRIPE_SECRET_KEY`, `FRONTEND_URL`, `NODE_ENV`
 
-### Deploy to Netlify
-1. Build the project: `npm run build`
-2. Deploy the `dist` folder to Netlify
+## 🧪 Development Commands
 
-## 📝 Environment Variables
+- `npm run dev` (in frontend): Start Vite dev server.
+- `npm run dev` (in backend): Start Nodemon dev server.
+- `npm run seed` (in backend): Seed database with mock products.
+- `npm run build` (in frontend): Build for production.
 
-Create a `.env` file in the root directory (optional):
+## 🤝 Contributing
+Feel free to fork and submit pull requests!
 
-```env
-VITE_API_URL=http://localhost:3000/api
-```
-
-## 🎯 Future Enhancements
-
-- [ ] Product reviews and ratings system
-- [ ] Wishlist functionality
-- [ ] Advanced filtering (price range, brand)
-- [ ] Product recommendations
-- [ ] Real payment integration (Stripe)
+## 📄 License
+MIT License
 - [ ] Email notifications
 - [ ] Admin dashboard
 - [ ] Product inventory management
-- [ ] Multi-language support
-
-## 🤝 Contributing
 
 This is an educational project. Feel free to fork and modify for your own learning purposes.
 

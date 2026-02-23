@@ -17,8 +17,10 @@ const seedProducts = async () => {
     try {
         console.log('Loading products data...')
 
-        // Read products from frontend data
-        const productsPath = path.join(__dirname, '../../src/data/products.json')
+        // Read products from local backend data file
+        const productsPath = path.join(__dirname, '../data/products.json')
+        console.log('Reading products from:', productsPath)
+
         const productsData = await fs.readFile(productsPath, 'utf-8')
         const products = JSON.parse(productsData)
 

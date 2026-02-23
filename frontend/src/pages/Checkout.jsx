@@ -32,6 +32,12 @@ const Checkout = () => {
     const [errors, setErrors] = useState({})
     const [loading, setLoading] = useState(false)
 
+    useEffect(() => {
+        if (items.length === 0) {
+            navigate('/cart')
+        }
+    }, [items, navigate])
+
     const subtotal = calculateSubtotal(items)
     const tax = calculateTax(subtotal)
     const shipping = calculateShipping(subtotal)
@@ -88,7 +94,6 @@ const Checkout = () => {
     }
 
     if (items.length === 0) {
-        navigate('/cart')
         return null
     }
 
